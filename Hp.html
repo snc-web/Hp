@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reported Speech Masterclass | DHIRAJ KADEL</title>
+    <style>
+        :root {
+            --bg: #030712;
+            --accent-cyan: #22d3ee;
+            --accent-purple: #8b5cf6;
+            --glow: rgba(34, 211, 238, 0.4);
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Orbitron', sans-serif; font-family: 'Inter', sans-serif; }
+
+        body {
+            background-color: var(--bg);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(34, 211, 238, 0.15) 0px, transparent 50%);
+            color: #e2e8f0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .author {
+            text-align: center;
+            font-size: 0.8rem;
+            letter-spacing: 5px;
+            color: var(--accent-purple);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            animation: flicker 3s infinite;
+        }
+
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; text-shadow: 0 0 10px var(--accent-purple); }
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            background: linear-gradient(to right, #fff, var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 40px;
+            filter: drop-shadow(0 0 15px var(--glow));
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .neo-card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 25px;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .neo-card:hover {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 20px var(--glow);
+        }
+
+        .neo-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+            animation: circuit-flow 4s infinite linear;
+        }
+
+        @keyframes circuit-flow {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        h2 {
+            color: var(--accent-cyan);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+        th, td { padding: 10px 5px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .direct { color: #94a3b8; }
+        .indirect { color: var(--accent-cyan); font-weight: bold; }
+
+        .pronoun-box {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .p-item {
+            background: rgba(139, 92, 246, 0.1);
+            padding: 10px;
+            border-radius: 8px;
+            flex: 1;
+            text-align: center;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .p-label { display: block; font-size: 0.7rem; color: var(--accent-purple); margin-bottom: 5px; }
+
+        /* The Reality Shifter UI */
+        .shifter-section {
+            grid-column: 1 / -1;
+            text-align: center;
+            border: 2px solid var(--accent-purple);
+            background: rgba(139, 92, 246, 0.05);
+        }
+
+        input {
+            width: 70%;
+            padding: 15px;
+            background: #000;
+            border: 1px solid var(--accent-cyan);
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1.1rem;
+            margin: 20px 0;
+            outline: none;
+            box-shadow: inset 0 0 10px var(--glow);
+        }
+
+        button {
+            background: var(--accent-cyan);
+            color: #000;
+            border: none;
+            padding: 15px 40px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            box-shadow: 0 0 30px var(--accent-cyan);
+            transform: scale(1.05);
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 1.4rem;
+            color: var(--accent-cyan);
+            text-shadow: 0 0 10px var(--glow);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="author">Author: DHIRAJ KADEL</div>
+    <h1>REPORTED SPEECH</h1>
+
+    <div class="main-grid">
+        <div class="neo-card">
+            <h2>⚡ Tense Shift ($V^x \rightarrow V^y$)</h2>
+            <table>
+                <tr><td class="direct">V1 / V5</td><td class="indirect">V2</td></tr>
+                <tr><td class="direct">Is/Am/Are + V4</td><td class="indirect">Was/Were + V4</td></tr>
+                <tr><td class="direct">Has/Have + V3</td><td class="indirect">Had + V3</td></tr>
+                <tr><td class="direct">V2 (Simple Past)</td><td class="indirect">Had + V3</td></tr>
+                <tr><td class="direct">Was/Were + V4</td><td class="indirect">Had been + V4</td></tr>
+                <tr><td class="direct">Will/Can/May</td><td class="indirect">Would/Could/Might</td></tr>
+                <tr><td class="direct">Must</td><td class="indirect">Had to / Must</td></tr>
+            </table>
+        </div>
+
+        <div class="neo-card">
+            <h2>⏳ Time Markers</h2>
+            <table>
+                <tr><td class="direct">Today</td><td class="indirect">That day</td></tr>
+                <tr><td class="direct">Yesterday</td><td class="indirect">The day before</td></tr>
+                <tr><td class="direct">Tomorrow</td><td class="indirect">The next day</td></tr>
+                <tr><td class="direct">The day before yesterday</td><td class="indirect">Two days before</td></tr>
+                <tr><td class="direct">The day after tomorrow</td><td class="indirect">In two days time</td></tr>
+                <tr><td class="direct">Now / Here</td><td class="indirect">Then / There</td></tr>
+                <tr><td class="direct">This / These</td><td class="indirect">That / Those</td></tr>
+            </table>
+        </div>
+
+        <div class="neo-card">
+            <h2>👥 Person Conversion</h2>
+            <div class="pronoun-box">
+                <div class="p-item">
+                    <span class="p-label">1st Person</span>
+                    I, We, Me, My<br>→ <b>Subject</b>
+                </div>
+                <div class="p-item">
+                    <span class="p-label">2nd Person</span>
+                    You, Your<br>→ <b>Object</b>
+                </div>
+                <div class="p-item">
+                    <span class="p-label">3rd Person</span>
+                    He, She, It, They<br>→ <b>No Change</b>
+                </div>
+            </div>
+            <p style="margin-top:15px; font-size: 0.8rem; color: #94a3b8;">Rule: S.O.N (Subject, Object, No-Change)</p>
+        </div>
+
+        <div class="neo-card shifter-section">
+            <h2>🔮 Reality Shifter</h2>
+            <p>Input Direct Speech (e.g., "I saw you yesterday")</p>
+            <input type="text" id="inputBox" placeholder="Enter sentence here...">
+            <br>
+            <button onclick="shiftSpeech()">Transform Speech</button>
+            <div id="output"></div>
+        </div>
+    </div>
+
+    <script>
+        function shiftSpeech() {
+            let input = document.getElementById('inputBox').value.trim().toLowerCase();
+            let output = document.getElementById('output');
+            
+            if(!input) return;
+
+            let result = input;
+
+            // Logic matching the board image
+            const shifts = [
+                { f: "i saw", t: "he/she had seen" },
+                { f: "yesterday", t: "the day before" },
+                { f: "tomorrow", t: "the following day" },
+                { f: "i am", t: "he/she was" },
+                { f: "i have", t: "he/she had" },
+                { f: "today", t: "that day" }
+            ];
+
+            shifts.forEach(s => {
+                result = result.replace(s.f, `<span style="color:white">${s.t}</span>`);
+            });
+
+            output.innerHTML = `<small style="color:#8b5cf6">Indirect:</small><br>He said that ${result}`;
+        }
+    </script>
+</body>
+</html>
